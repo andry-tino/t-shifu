@@ -1,0 +1,429 @@
+<html>
+    <head>
+		<title>Andrea Tino - Darcia (tutorial)</title>
+
+        <meta charset="utf-8">
+		<meta name="description" content="A tutorial project for moving the first steps with Javascript targeting young students">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+
+        <link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/lib/css/atelier-estuary-light.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Welcome to Darcia</h1>
+                    <p>A tutorial project to learn Javascript from level zero.</p>
+
+                    <div style="display: flex; flex-direction: row; align-items: center; padding: 0 115px">
+                        <div style="flex: 0 0 auto">
+                            <img src="images/shifu.jpg" alt="Drawing" style="width: 150px; height: 150px"/>
+                        </div>
+                        <div style="flex: 1 1 auto">
+                            <blockquote style="width: auto">
+                                <p style="color:#999999">
+                                    There is no such thing as level zero.
+                                    <br/>
+                                    <span style="font-size: 0.7em; color: #333333">(Master Shifu, Kung Fu Panda)</span>
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <p>by <a href="https://github.com/andry-tino">Andrea Tino</a></p>
+                </section>
+
+                <section data-markdown><script type="text/template">
+                    ## What is our objective?
+                    This is not designed to be a full course on a programming language.
+
+                    > Rather, this is an introduction to give you the basics 
+                    > to code in Javascript, and to understand other programs 
+                    > written in Javascript
+                </script></section>
+
+                <section data-markdown><script type="text/template">
+                    ## What are we going to learn?
+                    We are going to cover the basics of Javascript, so this is not an advanced course.
+
+                    - What Javascript is today
+                    - Basic language syntax features
+                    - Modern REPLs in the Internet
+                    - Functions
+                </script></section>
+
+                <section>
+                    <section data-markdown><script type="text/template">
+                        ## What is Javascript?
+                        <img src="images/javascript-logo.png" alt="Drawing"/>
+                        Javascript is a [programming language](https://en.wikipedia.org/wiki/Programming_language), 
+                        thus it is a way for humans to tell a computer what to do.
+
+                        It was created by [Netscape](https://en.wikipedia.org/wiki/Netscape) 
+                        to add interactions in web pages (Internet had just borned).
+
+                        **Mocha** (May '95) > **LiveScript** (Sep '95) > **Javascript** (Dec '95).
+
+                        #### Important
+                        Remember that `Javascript != Java`!
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Where do we use Javascript?
+                        Javascript's purpose did not change from the days when it was born. It is mainly used to add 
+                        interaction and logic to web pages and web applications.
+
+                        - Add animations, like opening a menu or sliding a visual element.
+                        - Respond to the user input, like opening the same menu when the user right clicks somewhere.
+                        - Sending a receiving messages in Internet.
+
+                        Today it does much more than that.
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## What do I need to start coding in Javascript?
+                        That's the easiest question:
+
+                        - A browser (IE, Chrome, Edge, Firefox, Safari, etc.)
+                        - A text editor.
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Online processors
+                        Today you can code in a programming language and execute a program written in that 
+                        language using online processors. The advantas are many:
+
+                        - No need to install compilers
+                        - No need to run programs on your machine (except the browser)
+                        - No need to install a text editor
+
+                        Popular processors today are 
+                        [jsbin](http://jsbin.com/help/getting-started), 
+                        [jsfiddle](https://jsfiddle.net/) and 
+                        [codepen](http://codepen.io/).
+                    </script></section>
+                </section>
+
+                <section>
+                    <section data-markdown><script type="text/template">
+                        ## Hello world
+                        <img src="images/html-logo.png" alt="Drawing"/>
+                        When a programmer learns a new language, the first thing they code is a little program called 
+                        [Hello World](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program).
+
+                        Using your text editor, type the following and save it as: `hello-world.html`.
+
+                        ```
+                        <!doctype html>
+                        <html>
+                            <body>
+                            Hello World!
+                            </body>
+                        </html>
+                        ```
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Not Javascript... yet
+                        What we just wrote was no Javascript. It was pure [HTML](https://en.wikipedia.org/wiki/HTML).
+
+                        As said before, Javascript is deeply connected to HTML, so when we want to render 
+                        something in the browser, we will always need to write down some HTML.
+
+                        #### Separating concepts
+                        Let's learn the most important thing of web programming.
+
+                        - **HTML** is used to create and draw elements on the page
+                        - **Javascript** is used to add actions to those elements
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Graphics vs business logic
+                        We could add Javascript code directly in the HTML page, but this is generally **bad practice**.
+                        Let's rather put our code into separate files that we can import in the page.
+
+                        ```
+                        <!doctype html>
+                        <html>
+                            <head>
+                                <script type="text/javascript" src="actions.js"/>
+                            </head>
+                            <body></body>
+                        </html>
+                        ```
+
+                        The page will then expect `actions.js` to be placed in the same folder, the code in that file
+                        will be imported in the page and executed right away.
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Hello world (in Javascript)
+                        This time we want to add the text to the page using Javascript, instead of placing it manually.
+
+                        ```
+                        window.addEventListener("load", function() {
+                            document.body.textContent = "Hello World!";
+                        });
+                        ```
+
+                        The above code must land in a separate file, which will be imported, as showed before, in the page.
+                    </script></section>
+                </section>
+
+                <section>
+                    <section data-markdown><script type="text/template">
+                        ## Variables
+                        Variables are the way we can store information.
+
+                        ```
+                        var myNumber = 0;       // A number
+                        var myString = "hello"  // A string (sequence of characters)
+                        ```
+
+                        Use they keyword `var` to define a variable, give it a name and assign a value.
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Types
+                        > Javascript is a loosely typed language.
+
+                        It means that every variable has a type, but it can change.
+
+                         ```
+                        var foo = "A string variable";  // A variable is declared as a string
+                        foo = 3.14;                     // Now it becomes a number
+                        ```
+
+                        Javascript supports very few types. To see what type a variable is, use this:
+
+                        ```
+                        typeof(foo);
+                        ```
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Hello World II
+                        Let's see variabes in action in our little dummy program.
+
+                        ```
+                        window.addEventListener("load", function() {
+                            var text = prompt("Type your favorite greeting"); // User input
+                            document.body.textContent = text;
+                        });
+                        ```
+                    </script></section>
+                </section>
+
+                <section>
+                    <section data-markdown><script type="text/template">
+                        ## Flow control
+                        A Javascript program is executed top-bottom. However sometimes that's not what we want.
+                        For example:
+
+                        ```
+                        var weight = prompt("Your weight in grams...");
+                        weight = parseInt(weight / 1000); // Run only if weight > 1000
+                        ```
+
+                        #### Common flow control needs
+                        - Execute code only when a condition is met
+                        - Execute code more times
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## If statement
+                        Execute a block of code only when a condition is met.
+
+                        ```
+                        if (weight > 1000) {
+                            weight = parseInt(weight / 1000);
+                        }
+                        ```
+
+                        If the condition is not met, the block is not executed and skipped.
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## If-Else statement
+                        You can specify a block of code to execute instead, if the condition is not met.
+
+                        ```
+                        if (weight > 1000) {
+                            weight = parseInt(weight / 1000);
+                        } else {
+                            weight = 0; // You are just too light
+                        }
+                        ```
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## If-ElseIf-Else statement
+                        You can specify more conditions.
+
+                        ```
+                        if (weight > 1000) {
+                            weight = parseInt(weight / 1000);
+                        } else if (weight <= 1000) {
+                            weight = 0; // You are just too light
+                        } else {
+                            alert("Negative numbers are invalid!");
+                        }
+                        ```
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## For statement
+                        Execute a block of code many times.
+
+                        ```
+                        var sum = 0;
+                        var N = parseInt(prompt("Type a number"));
+
+                        // Calculate 0 + 1 + 2 + ... + N
+                        for (var i = 0; i <= N; i++) {
+                            sum = sum + i;
+                        }
+
+                        alert("The first N sum is: " + sum);
+                        ```
+
+                        The block of code will be run until the condition applies.
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Switch statement
+                        Execute a block of code out of many possible choices.
+
+                        ```
+                        var language = prompt("Type a language (en, jp, it)");
+                        var greeting;
+
+                        switch (language) {
+                            case "en": greeting = "Hello World!"; break;
+                            case "jp": greeting = "Konnichiwa!"; break;
+                            case "it": greeting = "Ciao Mondo!"; break;
+                            default: greeting = "???"; break;
+                        }
+
+                        alert(greeting);
+                        ```
+
+                        Only one case will be executed, `default` is executed when non of the cases apply.
+                    </script></section>
+                </section>
+
+                <section>
+                    <section data-markdown><script type="text/template">
+                        ## Functions
+                        You can specify portable reusable logic to execute inside functions.
+
+                        ```
+                        function greet() {
+                            alert("Hello World!");
+                        }
+                        ```
+
+                        To invoke a function (execute its code), just type its name and parentheses:
+
+                        ```
+                        greet();
+                        ```
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Arguments
+                        A function can accept input arguments (also called parameters).
+
+                        ```
+                        function greet(greeting) {
+                            alert(greeting);
+                        }
+                        ```
+
+                        At invokation, you need to give values to parameters inside parentheses:
+
+                        ```
+                        greet("Hello World!");
+                        ```
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Return values
+                        A function can return values when invoked.
+
+                        ```
+                        function sumOfFirstN(N) {
+                            var sum = 0;
+
+                            // Calculate 0 + 1 + 2 + ... + N
+                            for (var i = 0; i <= N; i++) {
+                                sum = sum + i;
+                            }
+
+                            return sum;
+                        }
+                        ```
+
+                        At invokation, you can save the returned value in a variable:
+
+                        ```
+                        var sum = sumOfFirstN(3); // sum = 6
+                        ```
+                    </script></section>
+                </section>
+
+                <section>
+                    <p>by <a href="https://github.com/andry-tino">Andrea Tino</a></p>
+
+                    <div style="display: flex; flex-direction: row; align-items: center; padding: 0 175px">
+                        <div style="flex: 0 0 auto">
+                            <img src="images/shifu.jpg" alt="Drawing" style="width: 150px; height: 150px"/>
+                        </div>
+                        <div style="flex: 1 1 auto">
+                            <blockquote style="width: auto">
+                                <p style="color:#999999">
+                                    There is now a level zero 
+                                    <br/>
+                                    <span style="font-size: 0.7em; color: #333333">(Master Shifu, Kung Fu Panda)</span>
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="reveal.js/lib/js/head.min.js"></script>
+        <script src="reveal.js/js/reveal.js"></script>
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                dependencies: [
+                    // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+                    { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+                    // Interpret Markdown in <section> elements
+                    { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+                    // Syntax highlight for <code> elements
+                    { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+        </script>
+    </body>
+</html>

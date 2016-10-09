@@ -1,0 +1,1 @@
+A tutorial project for learning Javascript from level zero
