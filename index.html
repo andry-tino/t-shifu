@@ -167,13 +167,13 @@
                         <!doctype html>
                         <html>
                             <head>
-                                <script type="text/javascript" src="./actions.js"></script>
+                                <script type="text/javascript" src="./actions.js" /> <!-- Not all browser support self-closing tag -->
                             </head>
                             <body></body>
                         </html>
                         ```
 
-                        The page will then expect file `actions.js` to be placed in the same folder, the code in that file
+                        The page will then expect `actions.js` to be placed in the same folder, the code in that file
                         will be imported in the page and executed right away.
                     </script></section>
 
