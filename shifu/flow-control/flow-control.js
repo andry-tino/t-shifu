@@ -15,7 +15,7 @@ weight = parseInt(weight / 1000); // Run only if weight > 1000
 // ------------------------
 
 if (weight > 1000) {
-    weight = parseInt(weight / 1000);
+    weight = parseInt(weight) / 1000;
 }
 
 // ------------------------
@@ -23,7 +23,7 @@ if (weight > 1000) {
 // ------------------------
 
 if (weight > 1000) {
-    weight = parseInt(weight / 1000);
+    weight = parseInt(weight) / 1000;
 } else {
     weight = 0; // You are just too light
 }
@@ -33,7 +33,7 @@ if (weight > 1000) {
 // ------------------------
 
 if (weight > 1000) {
-    weight = parseInt(weight / 1000);
+    weight = parseInt(weight) / 1000;
 } else if (weight <= 1000) {
     weight = 0; // You are just too light
 } else {
