@@ -421,6 +421,106 @@
                     </script></section>
                 </section>
 
+                <section>
+                    <section data-markdown><script type="text/template">
+                        ## Objects
+                        In Javascript, it is possible to create more complex things other than
+                        just strings and numbers. We call these: _objects_.
+
+                        An object is created inside a _block_ `{}` by adding _keys_ or
+                        _properties_ to it:
+
+                        ```json
+                        {
+                            name: "Shifu"
+                        }
+                        ```
+
+                        The one above is a very simple object with one string property.
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Many properties
+                        One can create objects with more properties inside:
+
+                        ```json
+                        {
+                            name: "Shifu",
+                            country: "China",
+                            age: "800 years (or so)"
+                        }
+                        ```
+
+                        You can have as many properties as you want inside an object!
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Many types of properties
+                        You can have objects with properties tht are not just strings.
+
+                        ```json
+                        {
+                            name: "Shifu",
+                            country: "China",
+                            age: 800,
+                            numberOfMedals: 1300
+                        }
+                        ```
+
+                        Properties can be strings but also numbers!
+                    </script></section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Nesting objects
+                        Of course, since properties can be of **any** type, they can be other
+                        properties:
+
+                        ```json
+                        {
+                            name: "Shifu",
+                            location: {
+                                address: "Confucius Plaza",
+                                city: "New York City",
+                                zip: 10017
+                            }
+                        }
+                        ```
+
+                        There is no limit to what an object can contain!
+                    </script></section>
+
+                    <section>
+                        <div style="display: flex; flex-direction: column; align-items: center">
+                            <img data-src="images/matrioska.jpg" alt="Illustration" style="flex: 1 0 auto"/>
+                            <p style="font-size: 0.8em; flex: 0 0 auto;">What it feels like working with objects in Javascript. <span style="margin-left: 0.5em; font-size: 0.6em">(Photograph)</span></p>
+                        </div>
+                    </section>
+
+                    <section data-markdown><script type="text/template">
+                        ## Complex nested objects
+                        You can have very complicated structures:
+
+                        ```json
+                        {
+                            name: "Shifu",
+                            home: {
+                                address: "Confucius Plaza",
+                                city: "New York City",
+                                zip: 10017
+                            },
+                            work: {
+                                address: "Jada Temple",
+                                city: "Beijing",
+                                contact: {
+                                    phone: "050-38485855",
+                                    fax: "050-38485844"
+                                }
+                            }
+                        }
+                        ```
+                    </script></section>
+                </section>
+
                 <section data-markdown><script type="text/template">
                     ## We have learnt a lot!
                     During these slides, we have gone through many baisc stugg. Now we can:
@@ -429,6 +529,7 @@
                     - Wrice conditional statements
                     - Write loops
                     - Write functions
+                    - Create objects
 
                     But don't forget: there is much more than this!
                 </script></section>
